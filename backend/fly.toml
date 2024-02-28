@@ -1,0 +1,18 @@
+app = "<app name>"
+
+[[services]]
+    internal_port = 3000
+    protocol = "tcp"
+    min_machines_running = 0
+
+[[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+[[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+[[services.tcp_checks]]
+    interval = 10000
+    timeout = 20000
